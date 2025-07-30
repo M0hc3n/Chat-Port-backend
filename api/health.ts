@@ -1,4 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   // Enable CORS for all
@@ -13,8 +13,8 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const { name = 'World' } = req.query
-  return res.json({
-    message: `Hello ${name}!`,
-  })
+  res.json({
+    status: "healthy",
+    timestamp: new Date().toISOString(),
+  });
 }
