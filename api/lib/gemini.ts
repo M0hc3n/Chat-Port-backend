@@ -9,7 +9,7 @@ export class GeminiService {
   }
 
   async formatChat(messages: ChatMessage[]): Promise<string> {
-    const model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = this.genAI.getGenerativeModel({ model: "models/gemini-2.5-pro" });
 
     const systemPrompt = this.createSystemPrompt(messages.length);
     const conversation = this.prepareConversation(messages);
