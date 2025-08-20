@@ -1,31 +1,40 @@
-# Node.js Hello World
+# Chat-Port Backend
 
-Simple Node.js + Vercel example that returns a "Hello World" response.
+This is the backend service for Chat-Port. It's a Node.js application built with TypeScript and designed to be deployed as serverless functions on Vercel.
 
-## How to Use
+The main feature of this backend is to process chat conversations using the Google Gemini API and format them into clean Markdown.
 
-You can choose from one of the following two methods to use this repository:
+## Core Features
 
-### One-Click Deploy
+- **Chat Formatting**: Takes a chat history and formats it using the Gemini API.
+- **Health Check**: Includes a `/api/health` endpoint to monitor service status.
+- **Serverless**: Built to run efficiently on Vercel.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+## Local Development
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/examples/tree/main/solutions/node-hello-world&project-name=node-hello-world&repository-name=node-hello-world)
+### Prerequisites
 
-### Clone and Deploy
+- Node.js
+- Vercel CLI (`npm i -g vercel`)
+- A Google Gemini API Key
 
-```bash
-git clone https://github.com/vercel/examples/tree/main/solutions/node-hello-world
-```
+### Setup
 
-Install the Vercel CLI:
+1. **Clone the repository.**
+2. **Install dependencies:**
 
-```bash
-npm i -g vercel
-```
+    ```bash
+    npm install
+    ```
 
-Then run the app at the root of the repository:
+3. **Create a `.env` file** in the root directory and add your API key:
 
-```bash
-vercel dev
-```
+    ```
+    GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+    ```
+
+4. **Run the development server:**
+
+    ```bash
+    vercel dev
+    ```
